@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+		<title>ANZ Championship</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300'
+              rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/stylesheet.css">
+	</head>
+    <body>
+    <div id="fullscreen" class="container close">
+        <h2 id="FS-title" class="row col-xs-12">
+
+        </h2>
+        <div id="FS-graph" class="row col-xs-12">
+
+        </div>
+    </div>
+    <button id="btn-toggle" type="button" class="btn btn-success fade">
+        <span class="sr-only">Toggle navigation</span>
+        <i class="glyphicon glyphicon-menu-hamburger" style="font-size: 16px;color:#fff"></i>
+    </button>
+        <div id = "page">
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav" id="selectors">
+                    <li class="sidebar-brand">
+                        <a href="index.html">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <h3>Filters</h3>
+                    </li>
+                    <li>
+                        <div class="input-group">
+                                <span class="input-group-addon">
+                                    Year
+                                </span>
+                                <span class="selectContainer">
+                                    <select id="selector-year" class="form-control" name="year"></select>
+                                </span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="input-group">
+                                <span class="input-group-addon">
+                                    Season
+                                </span>
+                                <span class="selectContainer">
+                                    <select id="selector-season" class="form-control" name="year"></select>
+                                </span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="input-group">
+                                <span class="input-group-addon">
+                                    Team
+                                </span>
+                                <span class="selectContainer">
+                                    <select id="selector-team" class="form-control" name="year"></select>
+                                </span>
+                        </div>
+                    </li>
+                    <li>
+                        <div id="input-group-team2" class="input-group fade">
+                                <span class="input-group-addon">
+                                    Team 2
+                                </span>
+                                <span class="selectContainer">
+                                    <select id="selector-team2" class="form-control" name="year"></select>
+                                </span>
+                        </div>
+                    </li>
+
+
+                </ul>
+            </div>
+
+            <div class="top">
+                <div class = "header clearfix">
+                    <h1 class="header-title">ANZ Championship</h1>
+                    <nav>
+                        <ul class="nav header-nav">
+                            <li>
+                                <a href="index.html">
+                                    Home
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <h2 class="page-title">Stats</h2>
+            <div id="content">
+                <div id="non-comparisons" class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h3>
+                                Average score
+                            </h3>
+                            <h1 id="avg-score"></h1>
+                        </div>
+                        <div class="col-md-4">
+                            <h3>
+                                Placement
+                            </h3>
+                            <h1 id="placing"></h1>
+                        </div>
+                        <div class="col-md-4">
+                            <h3>
+                                Top Streak
+                            </h3>
+                            <h1 id="top-streak"></h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h3>Win to loss ratio</h3>
+                            <div id="graph-win-loss">
+                            </div>
+                            <p>Graph of how this team performs overall</p>
+                            <p><a id="win-loss-details" class="btn btn-success">More details&raquo;</a></p>
+                        </div>
+                        <div class="col-md-4">
+                            <h3>Home win to loss ratio</h3>
+                            <div id="graph-home-wins">
+                            </div>
+                            <p>Graph of how this team performs in home games</p>
+                            <p><a id="win-loss-home-details" class="btn btn-success">More details&raquo;</a></p>
+                        </div>
+                        <div class="col-md-4">
+                            <h3>Away win to loss ratio</h3>
+                            <div id="graph-away-wins">
+                            </div>
+                            <p>Graph of how this team performs in away games</p>
+                            <p><a id="win-loss-away-details" class="btn btn-success">More details&raquo;</a></p>
+                        </div>
+                    </div>
+
+
+                    <h2 class="row col-xs-12">History</h2>
+                    <h3 class="row col-xs-12">Top 5 venues</h3>
+                    <div class="row">
+                        <div id="graph-top-venues" class="col-xs-12">
+
+                        </div>
+                    </div>
+                    <h3 class="row col-xs-12">Top 5 Rivals</h3>
+                    <div class="row">
+                        <div id="graph-top-rivals" class="col-xs-12">
+
+                        </div>
+                    </div>
+                </div>
+                <div id="comparisons" class="container hidden">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h3>Win to loss ratio</h3>
+                            <div id="graph-comp-win-loss">
+                            </div>
+                            <p>Comparison of how these teams perform overall</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h3>Home wins</h3>
+                            <div id="graph-comp-home-wins">
+                            </div>
+                            <p>Comparison of how these teams perform in home games</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h3>Away wins</h3>
+                            <div id="graph-comp-away-wins">
+                            </div>
+                            <p>Comparison of how these teams perform in away games</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+            <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+            <script type="text/javascript" src="js/graphs.js"></script>
+            <script type="text/javascript" src="js/main.js"></script>
+
+        </div>
+    </body>
+</html>
